@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import Dish from "./Dish.js";
+import Dishes from "./Dishes.js";
+import Login from "./Login.js";
+import NavBar from "./NavBar.js";
 function App() {
+  const [currentUser, setCurrentUser] = useState("");
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setCurrentUser(user));
+      }
+    });
+  }, []);
+
+  if (!currentUser) {
+    return <Login onLogin={setCurrentUser} />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <Dishes currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          }
+        />
+      </Routes>
     </div>
   );
 }
-
 export default App;
