@@ -25,9 +25,9 @@ function App() {
       <Routes>
         <Route
           exact
-          path="/"
+          path="*"
           element={
-            <Dishes currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            <Login currentUser={currentUser} setCurrentUser={setCurrentUser} onLogin={setCurrentUser} />
           }
         />
       </Routes>

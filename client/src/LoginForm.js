@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { Routes, Route } from "react-router-dom";
+import Dishes from './Dishes'
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = ({onLogin}) => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,6 +25,7 @@ const LoginForm = ({onLogin}) => {
       })
       .then((data) => {
         onLogin(data)
+        navigate('/home')
       })
       .catch((error) => {
         setError(error.message);
@@ -47,6 +52,9 @@ const LoginForm = ({onLogin}) => {
       <br />
       {error && <p>{error}</p>}
       <button type="submit" className='login-button'>Login</button>
+      <Routes>
+        <Route exact path='/home' element ={<Dishes/>}></Route>
+      </Routes>
     </form>
   );
 };
