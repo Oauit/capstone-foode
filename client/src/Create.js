@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-// import App from "./App.js"
+import App from "./App.js";
+import { useNavigate } from "react-router-dom";
 
 function Create({ onLogin }) {
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   // console.log("hello from create");
-
+  const navigate = useNavigate();
   function handleSubmit(e) {
     e.preventDefault();
     const user = {
-      username,
-      password,
+      name: name,
+      password: password,
     };
     fetch("/signup", {
       method: "POST",
@@ -18,16 +19,17 @@ function Create({ onLogin }) {
       body: JSON.stringify(user),
     })
       .then((r) => r.json())
-      .then((data) => onLogin(data));
+      .then((data) => onLogin(data))
+      .then(navigate("/dishes"));
   }
 
   return (
     <form onSubmit={handleSubmit} className="new-account-form">
       <input
         type="text"
-        placeholder="Enter a Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Enter a Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
       <br></br>
       <input

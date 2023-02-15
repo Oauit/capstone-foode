@@ -1,5 +1,5 @@
-class DishSerializer 
-    include FastJsonapi::ObjectSerializer
+class DishSerializer < ActiveModel::Serializer
+    
     attributes :id, :name, :image_url, :slug
 
     has_many :reviews

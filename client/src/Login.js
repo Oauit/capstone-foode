@@ -3,9 +3,8 @@ import { useState} from 'react';
 import LoginForm from './LoginForm';
 import Create from './Create';
 
-function Login({ onLogin }) {
+function Login({ onLogin, currentUser}) {
     const [showLogin, setShowLogin] = useState(true)
-
     return (
         <>
           <h1 className='log-in-title'>Food-E</h1>
@@ -13,7 +12,7 @@ function Login({ onLogin }) {
               <>
                 <LoginForm onLogin={onLogin} />
                 <div style={{ textAlign: 'center'}}>
-                  <p style={{ fontStyle: 'italic'}}>Don't have an account?</p>
+                  <p style={{ fontStyle: 'italic'}}>No Account?</p>
                   <button onClick={() => setShowLogin(false)} className='sign-up-button'>Sign Up</button>
                 </div>
         </>
@@ -27,6 +26,7 @@ function Login({ onLogin }) {
               </>
               
             )}
+            
         </>
           
     );

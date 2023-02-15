@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
         review = Review.new(review_params)
 
         if review.save
-            render json: ReviewSerializer.new(review).serialized_json
+            render json: review, status: :created
         else
             render json: { error: review.errors.messages }, status: 422
         end

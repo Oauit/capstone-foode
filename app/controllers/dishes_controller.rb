@@ -3,19 +3,19 @@ class DishesController < ApplicationController
     def index
       dish = Dish.all
 
-      render json: DishSerializer.new(dish, options).serialized_json
+      render json: dish
     end
 
     def show
       dish = Dish.find_by(slug: params[:slug])
-      render json: DishSerializer.new(dish, options).serialized_json
+      render json: dish, status: :success
     end
 
     def create
       dish = Dish.new(dish_params)
 
       if dish.save 
-        render json: DishSerializer.new(dish).serialized_json
+        render json: dish, status: :success
       else
         render json: {error: dish.errors.messages }, status: 422
       end
@@ -25,7 +25,7 @@ class DishesController < ApplicationController
       dish = Dish.find_by(slug: params[:slug])
 
       if dish.update(dish_params) 
-        render json: DishSerializer.new(dish, options).serialized_json
+        render json: dish, status: :success
       else
         render json: {error: dish.errors.messages }, status: 422
       end
