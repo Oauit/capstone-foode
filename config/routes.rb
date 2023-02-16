@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   post '/create_review', to: 'reviews#create'
 
-  delete '/delete_review', to: 'reviews#destroy'
+  delete '/delete_account', to: 'users#destroy'
 
   patch '/edit_review', to: 'reviews#edit'
 

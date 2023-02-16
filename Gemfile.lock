@@ -84,6 +84,8 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
     ffi (1.15.5)
@@ -183,6 +185,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   debug
+  faker
   fast_jsonapi
   jbuilder
   listen (~> 3.3)

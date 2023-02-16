@@ -24,6 +24,15 @@ class UsersController < ApplicationController
         render json: user, status: :created
     end
 
+    def destroy
+      user = User.find(session[:user_id])
+        if user.destroy
+            head :no_content
+        else
+            render json: { error: user.errors.messages }, status: 422
+        end
+    end
+
 
     private
     def render_unprocessable_entity(invalid)
