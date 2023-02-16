@@ -39,6 +39,8 @@ group :development do
   gem "spring"
 end
 
+
+
 gem 'jbuilder'
 gem 'fast_jsonapi'
 

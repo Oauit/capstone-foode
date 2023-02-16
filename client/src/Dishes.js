@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import DishCard from "./DishCard.js";
 
-function Dishes({ currentUser, setReview }) {
+function Dishes({ currentUser, setReview, dataFetch, render, setRender }) {
   const [dishes, setDishes] = useState([]);
-  const [dataFetch, setDataFetch] = useState(false);
-  const [render, setRender] = useState(false);
+  
 
   useEffect(() => {
     if (render || !dataFetch) {
@@ -16,7 +15,7 @@ function Dishes({ currentUser, setReview }) {
       };
       fetchDishes();
     }
-  }, [render, dataFetch]);
+  }, [setRender, render, dataFetch]);
 
   const mappedDishes = () => {
     if (!dishes) return <h1>Loading </h1>;

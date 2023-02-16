@@ -1,12 +1,6 @@
 class UsersController < ApplicationController
     
-# rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
-# skip_before_action :authorize
 
-    # def show
-    #     current_user = User.find(session[:user_id])
-    #     render json: current_user
-    # end
 
     def show
         if session[:user_id].present?
@@ -33,6 +27,14 @@ class UsersController < ApplicationController
         end
     end
 
+    def check_name
+      if User.exists?(name: params[:name])
+        render json: { exists: true }
+      else 
+        render json: { exists: false }
+      end
+    end
+    
 
     private
     def render_unprocessable_entity(invalid)

@@ -23,5 +23,7 @@ Rails.application.routes.draw do
 
   patch '/edit_review', to: 'reviews#edit'
 
-  get 'review', to: 'reviews#index'
+  get '/review', to: 'reviews#index'
+
+  get '/check_name/:name', to: 'users#check_name'
 end

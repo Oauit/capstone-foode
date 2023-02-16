@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-
+import "./App.css"
 import Dishes from "./Dishes.js";
 import Login from "./Login.js";
 import NavBar from "./NavBar.js";
@@ -10,13 +10,19 @@ import UserPage from './UserPage.js'
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [review, setReview] = useState("");
+  const [dataFetch, setDataFetch] = useState(false);
+  const [render, setRender] = useState(false);
+
   useEffect(() => {
+    if (render || !dataFetch) {
+      
     fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setCurrentUser(user));
       }
-    });
-  }, []);
+      setRender(false)
+    });}
+  }, [render, dataFetch]);
 
   return (
     <>
@@ -28,7 +34,7 @@ function App() {
         />
         <Route
           path="/dishes"
-          element={<Dishes currentUser={currentUser} setReview={setReview} />}
+          element={<Dishes currentUser={currentUser} setReview={setReview} dataFetch={dataFetch} render={render} setRender={setRender}/>}
         />
         <Route
           path="/create"

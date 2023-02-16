@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #3CB371; /* Set the background color to a nice green color */
+    display: flex;
+    justify-content: space-between; /* Distribute the buttons evenly */
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar h5 {
+    color: white; /* Change the color of the navbar text to white */
+    margin: 0;
+  }
+  
+  .navbar button {
+    background-color: white; /* Set the background color of the buttons to white */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .navbar button:hover {
+    background-color: #f2f2f2; /* Change the background color of the buttons when hovering over them */
+  }
+  

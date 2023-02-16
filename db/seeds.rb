@@ -16,9 +16,18 @@ a=User.create(name: "Ben", password: "zxcv")
 
 
 
-a=Dish.create(name: "Bulgogi", image_url: "https://www.allrecipes.com/thmb/uCGNqSIAeoGUaOtUf6TI1r5qURs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/100606-beef-bulgogi-3x2-264-dba0ed64f1034f28a638031447ebb47a.jpg")
-b=Dish.create(name: "Kalbi", image_url: "https://www.allrecipes.com/thmb/uCGNqSIAeoGUaOtUf6TI1r5qURs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/100606-beef-bulgogi-3x2-264-dba0ed64f1034f28a638031447ebb47a.jpg")
-10.times {Dish.create(name: Faker::Food.dish, image_url: Faker::LoremFlickr.image(search_terms: ["korean","food"]))}
+a=Dish.create(name: "Bulgogi", image_url: "https://i.imgur.com/88I7Q2t.jpeg")
+b=Dish.create(name: "Kalbi", image_url: "https://i.imgur.com/uSMsU2H.jpeg")
+c=Dish.create(name: "Soft Tofu Stew", image_url: "https://i.imgur.com/8fjRmqp.jpeg")
+d=Dish.create(name: "Kimchi Stew", image_url: "https://i.imgur.com/Nrx080S.jpeg")
+e=Dish.create(name: "Kimchi Fried Rice", image_url: "https://i.imgur.com/AdHpgoq.jpeg")
+f=Dish.create(name: "Vegetable Fried Rice", image_url: "https://i.imgur.com/1w8B1MI.jpeg")
+g=Dish.create(name: "Cold Noodles", image_url: "https://i.imgur.com/OU9732x.jpeg")
+h=Dish.create(name: "Stir Fried Seafood Udon", image_url: "https://i.imgur.com/3WnMi1c.jpeg")
+i=Dish.create(name: "BibimBap", image_url: "https://i.imgur.com/rC56DbJ.jpeg")
+j=Dish.create(name: "Vegetable Pancake", image_url: "https://i.imgur.com/Cr99MpG.jpeg")
+k=Dish.create(name: "Tteokbokki", image_url: "https://i.imgur.com/9sio8tD.jpeg")
+
 
 
 one=Review.create(title: "Good Bulgogi", description: "It was pretty good Bulgogi!", score: 4, dish_id: 1, user_id: 1)

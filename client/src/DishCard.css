@@ -1,0 +1,69 @@
+.dishCard {
+    background-color: #2E8B57; /* Set the background color to a slightly darker version of the navbar color */
+    color: white; /* Change the text color to white */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Display two cards per row */
+    grid-gap: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    height: 300px;
+    overflow-y: scroll;
+    
+    
+  }
+  .dishCard::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  
+  .dishCard h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .dishCard h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .dishCard button {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .dishCard button:hover {
+    background-color: #b5b5b5;
+  }
+  
+  .reviewFormContainer {
+    margin-top: 20px; /* Add some margin to separate the review form from the buttons */
+  }
+  .reviewCard {
+    border: 1px solid #555;
+    background-color: #285C46;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(5, 2fr); /* Display two cards per row */
+    grid-gap: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .dishCard img {
+    margin: 0 auto; /* Center the image horizontally */
+    max-height: 300px;
+  }
+
+  
